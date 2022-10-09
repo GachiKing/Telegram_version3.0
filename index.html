@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="form-control col col-lg-12 text-center">
+      <input type="text" class="message" />
+    </div>
+    <div class="form-control col col-lg-12 text-center">
+        <button class="button-primary">push</button>
+    </div>
+
+    <script>
+        document.querySelector('button').onclick = function () {
+            let message = document.querySelector('.message').value;
+            const token = '5768216891:AAGeiYxHU-9evhg5xJkx-5Y9w--6kkI-56g';
+            let url = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=-1001886987876'
+            let xhhtp = new XMLHttpRequest();
+            xhhtp.open("GET", url + message, true);
+            xhhtp.send();
+        }
+    </script>
+  </body>
+</html>
